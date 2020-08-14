@@ -10,7 +10,6 @@ namespace LunchBuddies
         private List<string> RestaurantNames { get; set; }
         public string Name { get; set; }
 
-
         // constructor 
         public Restaurant()
         {
@@ -22,7 +21,6 @@ namespace LunchBuddies
 
             Name = restaurantNames[randomlyPickedRestaurant];
 
-            //Console.WriteLine($"We let C# decide for us, so {Name} it is!");
 
         }
 

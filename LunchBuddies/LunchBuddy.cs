@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using LunchBuddies;
 
 namespace LunchBuddies
 {
@@ -19,7 +20,7 @@ namespace LunchBuddies
         {
             FirstName = firstName;
             LastName = lastName;
-            // Console.WriteLine($"As expected, {firstName} {lastName} asked to join you for lunch. (Inside your LunchBuddy constructor)");
+            Console.WriteLine("\b");
         }
 
 
@@ -29,23 +30,37 @@ namespace LunchBuddies
 
         public virtual void Eat()
         {
-            Console.WriteLine("-- inside your eat() method --");
-            Console.WriteLine($"{FirstName} {LastName} decided to go out to eat. (inside your Eat() method.");
+            Console.WriteLine($"\"{FirstName} {LastName} and I decided to catch up during lunch.\"");
         }
+
+
+
 
 
         public virtual void Eat(string food)
         {
-            Console.WriteLine("-- inside your eat(string food) method --");
-            Console.WriteLine($"your food argument was {food}");
+            Console.WriteLine($"\"{FirstName} and I decided to get {food} for lunch.\"");
         }
 
 
-        public virtual void Eat(List<LunchBuddy> companions)
+
+
+
+        public void Eat(List<LunchBuddy> companions) // why List<LunchBuddy> companions and not List<LunchBuddies> companions?
         {
-            Console.WriteLine("-- inside your Eat(List<LunchBuddy> companions) method --");
-            Console.WriteLine($"your companions argument was {companions}");
+
+            var restaurant = new Restaurant();
+
+            Console.WriteLine($"{companions} is waiting at {restaurant}");
+
+            foreach (var companion in companions)
+            {
+                Console.WriteLine($"This companion is {companion}");
+            }
         }
+
+
+
 
 
         public virtual void Eat(string food, List<LunchBuddy> companions)
@@ -53,5 +68,10 @@ namespace LunchBuddies
             Console.WriteLine("-- inside your Eat(string food, List<LunchBuddy> companions) method --");
             Console.WriteLine($"Your food argument was {food}, and your companions argument was {companions}");
         }
+
+
+
+
+
     }
 }
