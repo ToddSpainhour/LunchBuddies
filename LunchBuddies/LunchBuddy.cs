@@ -55,7 +55,7 @@ namespace LunchBuddies
 
             List<string> theOthersInTheGroup = new List<string>();
 
-            List<string> commaSeperatedListOfOthersInTheGroup = new List<string>();
+            //List<string> commaSeperatedListOfOthersInTheGroup = new List<string>();
 
             string everybodyElse = string.Empty;
 
@@ -85,19 +85,37 @@ namespace LunchBuddies
 
 
 
-
-
-
-
-
         //public virtual void Eat(string food, List<LunchBuddy> companions)
-        //{
-        //    Console.WriteLine($"I met up {FirstName} to get some {food}.");
-        //}
+        public virtual void Eat(string food, List<LunchBuddy> companions)
+        {
+
+            var restaurant = new Restaurant();
+            List<string> othersInTheGroup = new List<string>();
+            string everybodyElse = string.Empty;
+
+            foreach (var companion in companions)
+            {
+                var otherNames = companion.FirstName;
+
+                if (otherNames == FirstName)
+                {
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    othersInTheGroup.Add(otherNames);
+                }
+
+                everybodyElse = string.Join(" and ", othersInTheGroup);
+
+            }
+
+            Console.WriteLine($"I met up {FirstName}, along with {everybodyElse}, to get some {food} from {restaurant.Name}.");
+        }
 
 
 
 
 
-    }
+}
 }

@@ -70,8 +70,8 @@ namespace LunchBuddies
 
 
             // 4
-            //Console.WriteLine(@"lunchBuddyOne.Eat(string food, List<LunchBuddy> companions)");
-            //lunchBuddyThree.Eat("burgers", lunchCompanions);
+            Console.WriteLine(@"lunchBuddyOne.Eat(string food, List<LunchBuddy> companions)");
+            lunchBuddyThree.Eat("burgers", lunchCompanions);
 
 
 
