@@ -20,7 +20,6 @@ namespace LunchBuddies
         {
             FirstName = firstName;
             LastName = lastName;
-            Console.WriteLine("\b");
         }
 
 
@@ -35,6 +34,8 @@ namespace LunchBuddies
 
 
 
+        //////////
+        
 
 
         public virtual void Eat(string food)
@@ -46,28 +47,53 @@ namespace LunchBuddies
 
 
 
-        public void Eat(List<LunchBuddy> companions) // why List<LunchBuddy> companions and not List<LunchBuddies> companions?
+
+        public void Eat(List<LunchBuddy> lunchCompanions) // why List<LunchBuddy> companions and not List<LunchBuddies> companions?
         {
 
             var restaurant = new Restaurant();
 
-            Console.WriteLine($"{companions} is waiting at {restaurant}");
+            List<string> theOthersInTheGroup = new List<string>();
 
-            foreach (var companion in companions)
+            List<string> commaSeperatedListOfOthersInTheGroup = new List<string>();
+
+            string everybodyElse = string.Empty;
+
+
+
+            foreach (var companion in lunchCompanions)
             {
-                Console.WriteLine($"This companion is {companion}");
+                var otherNames = companion.FirstName;
+
+                if (otherNames == FirstName)
+                {
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    theOthersInTheGroup.Add(companion.FirstName);
+                }
+
+
+                everybodyElse = string.Join(" and ", theOthersInTheGroup);
             }
+
+
+            Console.WriteLine($"{FirstName} will meet me at {restaurant.Name} along with {everybodyElse}.");
+
         }
 
 
 
 
 
-        public virtual void Eat(string food, List<LunchBuddy> companions)
-        {
-            Console.WriteLine("-- inside your Eat(string food, List<LunchBuddy> companions) method --");
-            Console.WriteLine($"Your food argument was {food}, and your companions argument was {companions}");
-        }
+
+
+
+        //public virtual void Eat(string food, List<LunchBuddy> companions)
+        //{
+        //    Console.WriteLine($"I met up {FirstName} to get some {food}.");
+        //}
 
 
 

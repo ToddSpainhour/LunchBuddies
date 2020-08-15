@@ -17,55 +17,66 @@ namespace LunchBuddies
 
 
 
-            // Console.WriteLine($"The first randomly selected restaurant is {restaurantOne.Name}");
 
 
-            ///////
+            
+            ///// had these as var
 
-            var lunchBuddyOne = new LunchBuddy("Scout", "Spainhour");
-            var lunchBuddyTwo = new LunchBuddy("Jimbo", "McLean");
-            var lunchBuddyThree = new LunchBuddy("Cindy", "Bender");
-
-
-            var lunchCompanions = new List<string>();
-
-            lunchCompanions.Add($"{lunchBuddyOne.FirstName} {lunchBuddyOne.LastName}");
-            lunchCompanions.Add($"{lunchBuddyTwo.FirstName} {lunchBuddyTwo.LastName}");
-            lunchCompanions.Add($"{lunchBuddyThree.FirstName} {lunchBuddyThree.LastName}");
+            LunchBuddy lunchBuddyOne = new LunchBuddy("Scout", "Spainhour");
+            LunchBuddy lunchBuddyTwo = new LunchBuddy("Jimbo", "McLean");
+            LunchBuddy lunchBuddyThree = new LunchBuddy("Cindy", "Bender");
 
 
-            Console.WriteLine($"lunchCompanions returns {lunchCompanions}");
+            List <LunchBuddy> lunchCompanions = new List<LunchBuddy>();
 
-           
+            lunchCompanions.Add(lunchBuddyOne);
+            lunchCompanions.Add(lunchBuddyTwo);
+            lunchCompanions.Add(lunchBuddyThree);
 
+
+
+            // 1
             Console.WriteLine(@"lunchBuddyOne.Eat()");
-            Console.WriteLine(@"{FirstName} {LastName} and I decided to catch up during lunch. and returns...");
-            lunchBuddyOne.Eat();
+            lunchBuddyTwo.Eat();
+
+
+
+
             Console.WriteLine(new string('-', 50));
-            Console.WriteLine("\b");
 
-            
-            
 
+
+            // 2
             Console.WriteLine("lunchBuddyOne.Eat(string food)");
-            Console.WriteLine(@"{FirstName} and I decided to get {food} for lunch.");
             lunchBuddyOne.Eat("Pizza");
-            Console.WriteLine(new string('-', 50));
 
 
-            
 
-            // eat(List<LunchBuddy> companions) - Will select a random restaurant name from a list of strings, 
-            // print to console that the buddy is at that restaurant,
-            // and also output the first name of each lunch buddy in the specified list.
 
-            Console.WriteLine(@"lunchBuddyOne.Eat()");  // ask for clarification
-            //Console.WriteLine(@"{FirstName} and I decided to go to {} for lunch.");
-            lunchBuddyOne.Eat();
             Console.WriteLine(new string('-', 50));
 
 
 
+            // 3
+            Console.WriteLine(@"lunchBuddyOne.Eat(companions)"); 
+            lunchBuddyThree.Eat(lunchCompanions);
+
+
+
+
+            Console.WriteLine(new string('-', 50));
+
+
+
+
+            // 4
+            //Console.WriteLine(@"lunchBuddyOne.Eat(string food, List<LunchBuddy> companions)");
+            //lunchBuddyThree.Eat("burgers", lunchCompanions);
+
+
+
+
+            Console.WriteLine(new string('-', 50));
 
 
 
